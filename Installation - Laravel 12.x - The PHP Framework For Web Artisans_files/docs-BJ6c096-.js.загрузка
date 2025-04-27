@@ -1,0 +1,28 @@
+import{m as k}from"./module.esm-BKQTc33J.js";import"./theme-switcher-CvREX8Sp.js";const C=`<svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <path
+        d="M6.2474 6.25033V2.91699H17.0807V13.7503H13.7474M13.7474 6.25033V17.0837H2.91406V6.25033H13.7474Z"
+        stroke="currentColor"
+        stroke-opacity="0.45"
+        stroke-linecap="round"
+    />
+</svg>
+`,E=`<svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <path
+        d="M5 11.6471L8.52941 14L15 6"
+        stroke="currentColor"
+        stroke-linecap="square"
+    />
+</svg>
+`;let T=document.querySelectorAll("#main-content pre");const g=(t,e)=>{navigator.clipboard.writeText(t.innerText.trim()).then(()=>{e.innerHTML=E,setTimeout(()=>{e.innerHTML=C},1500)})};T.forEach(t=>{var e=document.createElement("div");["relative","code-block-wrapper"].forEach(n=>{e.classList.add(n)}),t.parentNode.insertBefore(e,t),e.appendChild(t);let o=document.createElement("button");o.innerHTML=C,["md:block","hidden"].forEach(n=>{o.classList.add(n)}),o.setAttribute("aria-label","Copy to Clipboard"),o.setAttribute("title","Copy to Clipboard"),o.classList.add("copyBtn");const s=e.closest(".tabbed-code");if(s){const n=s.querySelector(".tabbed-code-nav");if(n.querySelector(".copyBtn")!==null)return;o.addEventListener("click",()=>{const c=s.querySelector(".active .torchlight-copy-target");g(c,o)}),n.appendChild(o)}else e.appendChild(o),o.addEventListener("click",()=>{const n=t.querySelector(".torchlight-copy-target");g(n,o)})});document.addEventListener("DOMContentLoaded",()=>{A(),x(),q();const t=document.querySelector("#skip-to-content-link"),e=document.querySelector("#main-content");t.addEventListener("click",o=>{o.preventDefault(),e.setAttribute("tabindex",-1),e.focus()}),e.addEventListener("blur",()=>{e.removeAttribute("tabindex")})});function q(){const t=document.querySelector(".docs_main"),e=document.querySelector("#on-this-page-content");if(!t||!e)return;const o=Array.from(t.querySelectorAll("h2, h3")),s=e.querySelectorAll("a"),n=new Map;s.forEach(r=>{const i=r.getAttribute("href");i&&i.startsWith("#")&&n.set(i.substring(1),r)});let c=null,u=window.scrollY,a="down",l=!1;if(window.location.hash){const r=window.location.hash.substring(1);n.has(r)&&(l=!0,setTimeout(()=>{d(r),setTimeout(()=>{l=!1},100)},0))}function h(){const r=window.scrollY;a=r>u?"down":"up",u=r}function d(r){r&&(c&&c.removeAttribute("data-active"),c=n.get(r),c&&c.setAttribute("data-active","true"))}s.forEach(r=>{r.addEventListener("click",()=>{const i=r.getAttribute("href");i&&i.startsWith("#")&&(l=!0,d(i.substring(1)),setTimeout(()=>{l=!1},100))})});const S=new IntersectionObserver(r=>{l||(h(),r.forEach(i=>{const f=i.target.getAttribute("id");if(!f)return;const b=o.findIndex(v=>v.getAttribute("id")===f);if(a==="down")i.isIntersecting&&d(f);else if(i.isIntersecting){const v=b>0?b-1:b;d(o[v].getAttribute("id"))}}))},{rootMargin:"0px 0px -80% 0px",threshold:0});o.forEach(r=>S.observe(r))}function A(){[...document.querySelectorAll(".docs_sidebar h2")].forEach(t=>{t.addEventListener("click",e=>{e.preventDefault();const o=t.parentNode.classList.contains("sub--on");[...document.querySelectorAll(".docs_sidebar ul li")].forEach(s=>s.classList.remove("sub--on")),o||t.parentNode.classList.add("sub--on")})})}function x(){function t(s){const n=new Date().valueOf();Array.from(s.rows).forEach((c,u)=>{if(u>0){const a=c.cells,l=a[0],h=m(a[a.length-2]),d=m(a[a.length-1]);n>d?l.classList.add("bg-red-500","support-policy-highlight"):n<=d&&n>h&&l.classList.add("bg-orange-600","support-policy-highlight")}})}const e=document.querySelector(".docs_main #support-policy ~ div table:first-of-type");if(e){t(e);return}const o=document.querySelector(".docs_main #support-policy ~ table:first-of-type");o&&t(o)}function m(t){return Date.parse(t.innerHTML.replace(/(\d+)(st|nd|rd|th)/,"$1"))}const p=document.querySelector(".sticky-side-nav"),y="h-[calc(100dvh-9rem)]",w="h-[calc(100dvh-5.5rem)]",D=new IntersectionObserver(t=>{t.forEach(e=>{e.isIntersecting?(p.classList.add(y),p.classList.remove(w)):(p.classList.add(w),p.classList.remove(y))})},{threshold:1}),L=document.querySelector("#main-content h1");L&&D.observe(L);k.start();
